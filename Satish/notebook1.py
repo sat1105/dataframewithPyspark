@@ -1,8 +1,4 @@
 # Databricks notebook source
-
-
-# COMMAND ----------
-
 # MAGIC %fs ls /databricks-datasets/asa/airlines
 
 # COMMAND ----------
@@ -12,8 +8,7 @@ df.display()
 
 # COMMAND ----------
 
-df.rdd.getNumPartitions()
-df.write.format("delta").mode("overwrite").saveAsTable("/Filestore/tables/flights")
+df.write.format("parquet").mode("overwrite").saveAsTable("flightdta")
 
 # COMMAND ----------
 
