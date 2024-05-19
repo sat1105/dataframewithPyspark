@@ -13,6 +13,7 @@ df.display()
 # COMMAND ----------
 
 df.rdd.getNumPartitions()
+df.write.format("delta").mode("overwrite").saveAsTable("/Filestore/tables/flights")
 
 # COMMAND ----------
 
