@@ -12,8 +12,13 @@ gold = dbutils.widgets.text("gold","dbfs:/mnt/s3-mount/aggregation-gold/")
 # COMMAND ----------
 
 df = (
-    spark.read.format("csv").option("header", "true").option("nullValue","null").option("inferSchema", "true").option("delimiter","\t").load(dbutils.widgets.get("bronze"))
+    spark.read.format("csv").option("header", "true").option("nullValue","null")\
+        .option("delimiter","\t").load(dbutils.widgets.get("bronze"))
 )
+
+# COMMAND ----------
+
+df.display()
 
 # COMMAND ----------
 
