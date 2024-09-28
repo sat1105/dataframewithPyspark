@@ -17,18 +17,6 @@ df = (
 
 # COMMAND ----------
 
-from pyspark.sql.functions import to_date, col
-
-def application(df):
-    df_agg = df.withColumn("SALETIME", to_date(col("SALETIME"), "MM/dd/yyyy HH:mm:ss")) \
-               .filter((col("PRICEPAID").isNotNull()) & (col("PRICEPAID") > 250) & (col("SALETIME").isNotNull())) \
-               .withColumn("year",year("DATEID")) \
-                .withColumn("month",month("DATEID")) \
-                .WithColumn("day",day("DATEID"))
-    display(df_agg)
-
-# COMMAND ----------
-
 from pyspark.sql.functions import to_date, col, year, month, day
 
 def application(df):
