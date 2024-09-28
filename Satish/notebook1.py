@@ -8,7 +8,7 @@ df.display()
 
 # COMMAND ----------
 
-df.write.format("parquet").mode("overwrite").saveAsTable("flightdta")
+df.write.format("parquet").mode("overwrite").saveAsTable("flightdta1")
 
 # COMMAND ----------
 
