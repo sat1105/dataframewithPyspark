@@ -8,8 +8,9 @@ df.display()
 
 # COMMAND ----------
 
-df.write.format("parquet").mode("overwrite").saveAsTable("flightdta1")
+df.write.format("delta").mode("overwrite").saveAsTable("flightdta1")
 
 # COMMAND ----------
 
-
+# MAGIC %sql
+# MAGIC show create table flightdata1
