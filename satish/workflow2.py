@@ -1,22 +1,30 @@
 # Databricks notebook source
 import sys
 import os
+sys.path.append('../')
+import satish.src.utils as ut 
+
+# COMMAND ----------
+
+import sys
+import os
 
 repo_root = '/Workspace/Repos/workflows/dataframewithPyspark'
 sys.path.append(os.path.abspath(repo_root))
 
 # Now you can import as before
-from satish.src.notebook1 import demo2
+import satish.src.utils as nb1
 
 # COMMAND ----------
 
-from pyspark.sql.functions import to_date, col, year, month, dayofmonth, day
-from pyspark.sql.types import *
+import sys
+
+# Assuming your module is uploaded to DBFS in the directory '/dbfs/FileStore/my_modules'
+module_path = '/dbfs/FileStore/my_modules'
+if module_path not in sys.path:
+    sys.path.append(module_path)
+
 from satish.src.utils import demo2
-
-# COMMAND ----------
-
-# MAGIC %run ./notebook1
 
 # COMMAND ----------
 

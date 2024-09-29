@@ -1,0 +1,6 @@
+pyarrow==4.0.1
+pyhocon==0.3.58
+hyperopt==0.2.7
+coverage~=5.5
+jsonnet==0.18.0
+coverage[toml]
