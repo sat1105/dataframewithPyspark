@@ -1,7 +1,22 @@
 # Databricks notebook source
+import sys
+import os
+
+repo_root = '/Workspace/Repos/workflows/dataframewithPyspark'
+sys.path.append(os.path.abspath(repo_root))
+
+# Now you can import as before
+from satish.src.notebook1 import demo2
+
+# COMMAND ----------
+
 from pyspark.sql.functions import to_date, col, year, month, dayofmonth, day
 from pyspark.sql.types import *
-from pyspark.sql import SparkSession
+from satish.src.utils import demo2
+
+# COMMAND ----------
+
+# MAGIC %run ./notebook1
 
 # COMMAND ----------
 
